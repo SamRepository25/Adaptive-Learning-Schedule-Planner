@@ -1,0 +1,424 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&display=swap');
+
+:root {
+    --color-bg: #FAFAF8;
+    --color-ink: #1C2321;
+    --color-ink-soft: #5A6660;
+    --color-primary: #2E3D49;
+    --color-primary-light: #40566A;
+    --color-card: #FFFFFF;
+    --color-border: #E4E1DA;
+    --color-amber: #D98E3F;
+    --color-sage: #6B8F71;
+    --color-red: #C1543C;
+    --color-error-bg: #FDECEA;
+
+    --font-display: 'Fraunces', serif;
+    --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+
+    --radius: 10px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    line-height: 1.5;
+}
+
+/* --- Header --- */
+.app-header {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
+    padding: 48px 24px 32px;
+    text-align: center;
+}
+
+.app-header h1 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: clamp(1.6rem, 4vw, 2.2rem);
+    margin: 0 0 8px;
+    color: #fff;
+}
+
+.subtitle {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 0.95rem;
+}
+
+.container {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 32px 20px 64px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.card {
+    background: var(--color-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    padding: 24px;
+}
+
+.card h2 {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 0 0 18px;
+    color: var(--color-primary);
+}
+
+/* --- Stat cards --- */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 14px;
+}
+
+.stat-card {
+    background: var(--color-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    padding: 18px;
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+.stat-icon {
+    font-size: 1.4rem;
+    display: block;
+    margin-bottom: 6px;
+}
+
+.stat-value {
+    font-family: var(--font-display);
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--color-primary);
+}
+
+.stat-label {
+    font-size: 0.78rem;
+    color: var(--color-ink-soft);
+    margin-top: 2px;
+}
+
+/* --- Timetable header / daily minutes control --- */
+.timetable-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.timetable-header h2 {
+    margin: 0;
+}
+
+.daily-minutes-control {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.daily-minutes-control label {
+    font-size: 0.8rem;
+    color: var(--color-ink-soft);
+}
+
+.daily-minutes-control input {
+    width: 70px;
+    padding: 6px 8px;
+    border: 1px solid var(--color-border);
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-family: var(--font-body);
+    background: var(--color-bg);
+    color: var(--color-ink);
+}
+
+/* --- Progress bar --- */
+.progress-wrap {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 18px;
+}
+
+.progress-bar {
+    flex: 1;
+    height: 10px;
+    background: var(--color-border);
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    width: 0%;
+    background: var(--color-sage);
+    transition: width 0.25s ease;
+}
+
+.progress-text {
+    font-size: 0.82rem;
+    color: var(--color-ink-soft);
+    white-space: nowrap;
+}
+
+/* --- Form --- */
+.form-group {
+    margin-bottom: 16px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--color-ink-soft);
+    margin-bottom: 6px;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 10px 12px;
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    border: 1px solid var(--color-border);
+    border-radius: 6px;
+    background: var(--color-bg);
+    color: var(--color-ink);
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: 2px solid var(--color-primary-light);
+    outline-offset: 1px;
+}
+
+button[type="submit"] {
+    width: 100%;
+    padding: 11px;
+    background: var(--color-primary);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: background 0.15s ease;
+}
+
+button[type="submit"]:hover {
+    background: var(--color-primary-light);
+}
+
+button[type="submit"]:focus-visible {
+    outline: 2px solid var(--color-primary-light);
+    outline-offset: 2px;
+}
+
+.error-message {
+    margin-top: 12px;
+    padding: 10px 12px;
+    background: var(--color-error-bg);
+    color: var(--color-red);
+    border-radius: 6px;
+    font-size: 0.85rem;
+}
+
+/* --- Timetable session rows --- */
+#timetable-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.session-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 14px;
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+}
+
+.session-row.completed {
+    opacity: 0.55;
+}
+
+.session-row.completed .row-title {
+    text-decoration: line-through;
+}
+
+.session-time {
+    font-size: 0.85rem;
+    color: var(--color-ink-soft);
+    min-width: 130px;
+}
+
+.session-checkbox {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.row-main {
+    flex: 1;
+    min-width: 0;
+}
+
+.row-title {
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+/* --- Exam list --- */
+#exams-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.exam-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 14px;
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    font-size: 0.9rem;
+}
+
+.exam-days {
+    color: var(--color-ink-soft);
+    font-size: 0.82rem;
+}
+
+/* --- Subject cards (color-coded by urgency) --- */
+.subject-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 14px;
+}
+
+.subject-card {
+    border: 1px solid var(--color-border);
+    border-left: 4px solid var(--color-sage);
+    border-radius: 8px;
+    padding: 14px;
+}
+
+.subject-card[data-level="medium"] {
+    border-left-color: var(--color-amber);
+}
+
+.subject-card[data-level="high"] {
+    border-left-color: var(--color-red);
+}
+
+.subject-card h3 {
+    margin: 0 0 8px;
+    font-size: 1rem;
+    font-family: var(--font-display);
+}
+
+.subject-card .card-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    color: var(--color-ink-soft);
+    margin-bottom: 4px;
+}
+
+.delete-btn {
+    margin-top: 8px;
+    background: none;
+    border: 1px solid var(--color-border);
+    color: var(--color-ink-soft);
+    cursor: pointer;
+    font-size: 0.8rem;
+    padding: 6px 10px;
+    border-radius: 6px;
+}
+
+.delete-btn:hover {
+    color: var(--color-red);
+    background: var(--color-error-bg);
+    border-color: var(--color-red);
+}
+
+/* --- Weekly plan --- */
+.weekly-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 12px;
+}
+
+.weekly-day {
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    padding: 12px;
+}
+
+.weekly-day h4 {
+    margin: 0 0 8px;
+    font-size: 0.85rem;
+    color: var(--color-primary);
+}
+
+.weekly-day ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: 0.8rem;
+}
+
+.weekly-day li {
+    padding: 3px 0;
+    color: var(--color-ink-soft);
+}
+
+/* --- Empty / error states --- */
+.empty-message {
+    color: var(--color-ink-soft);
+    font-size: 0.9rem;
+    text-align: center;
+    padding: 12px 0;
+}
+
+/* --- Accessibility / responsiveness --- */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        padding: 18px;
+    }
+
+    .timetable-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}

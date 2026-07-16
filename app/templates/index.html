@@ -1,0 +1,101 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <header class="app-header">
+        <h1>📚 Adaptive Learning Schedule Planner</h1>
+        <p class="subtitle">Study time that adjusts to your exam dates and difficulty</p>
+    </header>
+
+    <main class="container">
+
+        <!-- Dashboard Stats -->
+        <section class="stats-grid" id="stats-grid">
+            <div class="stat-card">
+                <span class="stat-icon">📖</span>
+                <div class="stat-value" id="stat-total-subjects">--</div>
+                <div class="stat-label">Total Subjects</div>
+            </div>
+            <div class="stat-card">
+                <span class="stat-icon">⏱️</span>
+                <div class="stat-value" id="stat-total-minutes">--</div>
+                <div class="stat-label">Daily Study Time</div>
+            </div>
+            <div class="stat-card">
+                <span class="stat-icon">📅</span>
+                <div class="stat-value" id="stat-upcoming-exams">--</div>
+                <div class="stat-label">Upcoming Exams</div>
+            </div>
+            <div class="stat-card">
+                <span class="stat-icon">✅</span>
+                <div class="stat-value" id="stat-sessions-today">--</div>
+                <div class="stat-label">Today's Sessions</div>
+            </div>
+        </section>
+
+        <!-- Today's Timetable + Progress -->
+        <section class="card" id="timetable-section">
+            <div class="timetable-header">
+                <h2>Today's Study Plan</h2>
+                <div class="daily-minutes-control">
+                    <label for="daily-minutes">Daily study time (min)</label>
+                    <input type="number" id="daily-minutes" min="30" max="600" step="10" value="120">
+                </div>
+            </div>
+            <div class="progress-wrap">
+                <div class="progress-bar"><div class="progress-fill" id="progress-fill"></div></div>
+                <span class="progress-text" id="progress-text">0 / 0 sessions</span>
+            </div>
+            <ul id="timetable-list"></ul>
+            <p id="timetable-empty" class="empty-message" hidden>Add subjects to generate a plan.</p>
+        </section>
+
+        <!-- Upcoming Exams -->
+        <section class="card" id="exams-section">
+            <h2>Upcoming Exams</h2>
+            <ul id="exams-list"></ul>
+            <p id="exams-empty" class="empty-message" hidden>No upcoming exams.</p>
+        </section>
+
+        <!-- Add Subject Form -->
+        <section class="card" id="add-subject-section">
+            <h2>Add Subject</h2>
+            <form id="subject-form">
+                <div class="form-group">
+                    <label for="name">Subject Name</label>
+                    <input type="text" id="name" name="name" maxlength="100" required>
+                </div>
+                <div class="form-group">
+                    <label for="exam_date">Exam Date</label>
+                    <input type="date" id="exam_date" name="exam_date" required>
+                </div>
+                <div class="form-group">
+                    <label for="difficulty">Difficulty</label>
+                    <select id="difficulty" name="difficulty" required>
+                        <option value="1">Easy</option>
+                        <option value="3" selected>Medium</option>
+                        <option value="5">Hard</option>
+                    </select>
+                </div>
+                <button type="submit">Add Subject</button>
+            </form>
+            <p id="form-error" class="error-message" hidden></p>
+        </section>
+
+        <!-- Subject Cards -->
+        <section class="card" id="subjects-section">
+            <h2>Your Subjects</h2>
+            <div class="subject-cards" id="subject-cards"></div>
+            <p id="subjects-empty" class="empty-message" hidden>No subjects added yet.</p>
+        </section>
+
+        <!-- Weekly Plan -->
+        <section class="card" id="weekly-section">
+            <h2>Weekly Study Plan</h2>
+            <div class="weekly-grid" id="weekly-grid"></div>
+            <p id="weekly-empty" class="empty-message" hidden>Add subjects to generate a weekly plan.</p>
+        </section>
+
+    </main>
+
+{% endblock %}
