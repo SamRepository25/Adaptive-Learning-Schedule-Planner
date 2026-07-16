@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adaptive Learning Schedule Planner</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+    <header class="app-header">
+        <h1>Adaptive Learning Schedule Planner</h1>
+        <p class="subtitle">Study time that adjusts to your exam dates and difficulty</p>
+    </header>
+
+    <main class="container">
+
+        <!-- Add Subject Form -->
+        <section class="card" id="add-subject-section">
+            <h2>Add Subject</h2>
+            <form id="subject-form">
+                <div class="form-group">
+                    <label for="name">Subject Name</label>
+                    <input type="text" id="name" name="name" maxlength="100" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="exam_date">Exam Date</label>
+                    <input type="date" id="exam_date" name="exam_date" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="difficulty">Difficulty</label>
+                    <select id="difficulty" name="difficulty" required>
+                        <option value="1">Easy</option>
+                        <option value="3" selected>Medium</option>
+                        <option value="5">Hard</option>
+                    </select>
+                </div>
+
+                <button type="submit">Add Subject</button>
+            </form>
+            <p id="form-error" class="error-message" hidden></p>
+        </section>
+
+        <!-- Subject List -->
+        <section class="card" id="subjects-section">
+            <h2>Your Subjects</h2>
+            <ul id="subjects-list">
+                <!-- populated by JS -->
+            </ul>
+            <p id="subjects-empty" class="empty-message" hidden>No subjects added yet.</p>
+        </section>
+
+        <!-- Today's Schedule -->
+        <section class="card" id="schedule-section">
+            <h2>Today's Study Schedule</h2>
+            <ul id="schedule-list">
+                <!-- populated by JS -->
+            </ul>
+            <p id="schedule-empty" class="empty-message" hidden>Add subjects to generate a schedule.</p>
+        </section>
+
+    </main>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
