@@ -1,59 +1,62 @@
 # 📚 Adaptive Learning Schedule Planner
 
-![Python](https://img.shields.io/badge/Python-3.12-blue?logo=python)
-![Flask](https://img.shields.io/badge/Flask-3.x-black?logo=flask)
-![SQLite](https://img.shields.io/badge/SQLite-Database-blue?logo=sqlite)
-![HTML5](https://img.shields.io/badge/HTML5-orange?logo=html5)
-![CSS3](https://img.shields.io/badge/CSS3-blue?logo=css3)
-![JavaScript](https://img.shields.io/badge/JavaScript-ES6-yellow?logo=javascript)
-![MIT License](https://img.shields.io/badge/License-MIT-green)
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3.12-blue?logo=python" />
+  <img src="https://img.shields.io/badge/Flask-3.x-black?logo=flask" />
+  <img src="https://img.shields.io/badge/SQLite-Database-blue?logo=sqlite" />
+  <img src="https://img.shields.io/badge/HTML5-orange?logo=html5" />
+  <img src="https://img.shields.io/badge/CSS3-blue?logo=css3" />
+  <img src="https://img.shields.io/badge/JavaScript-ES6-yellow?logo=javascript" />
+  <img src="https://img.shields.io/badge/License-MIT-green" />
+</p>
+
+<p align="center">
+A Flask-based study planner that intelligently generates personalized daily study schedules based on exam dates and subject difficulty.
+</p>
 
 ---
 
-## 🌐 Live Demo
+## 🚀 Live Demo
 
-**https://adaptivelearningscheduler.onrender.com**
-
----
-
-# 📖 Overview
-
-Adaptive Learning Schedule Planner is a Flask-based web application that intelligently generates a personalized daily study schedule based on:
-
-- 📅 Exam Date
-- 📈 Subject Difficulty
-- ⏳ Days Remaining
-
-Instead of manually deciding which subject to study first, the application calculates an urgency score for every subject and automatically distributes your available study time.
+🌐 **https://adaptivelearningscheduler.onrender.com**
 
 ---
 
-# ✨ Features
+## 📖 Overview
 
-- ✅ Add new subjects
-- ✅ Select exam date
-- ✅ Choose difficulty (Easy / Medium / Hard)
-- ✅ Automatic urgency calculation
-- ✅ Dynamic daily study schedule generation
-- ✅ SQLite database
-- ✅ Responsive UI
-- ✅ Flask REST API
-- ✅ Server-side validation
-- ✅ Deployable on Render
+Adaptive Learning Schedule Planner helps students organize their study time automatically.
+
+Instead of manually deciding what to study first, the application calculates an urgency score for each subject and generates a balanced daily study schedule.
 
 ---
 
-# 🧠 How It Works
+## ✨ Features
 
-Every subject receives an **Urgency Score**.
+- 📚 Add study subjects
+- 📅 Set exam dates
+- 🎯 Select difficulty (Easy / Medium / Hard)
+- ⚡ Automatic urgency calculation
+- 📈 Dynamic study schedule generation
+- 🗑 Delete subjects instantly
+- 🔒 Server-side validation
+- 💾 SQLite database
+- 🌐 REST API
+- 📱 Responsive interface
+- ☁️ Deployed on Render
 
-```
-Urgency Score = Difficulty Weight ÷ Days Remaining
+---
+
+## 🧠 Scheduling Algorithm
+
+The urgency score is calculated using:
+
+```text
+Urgency Score = Difficulty ÷ Days Remaining
 ```
 
 Subjects with:
 
-- Earlier exams
+- Earlier exam dates
 - Higher difficulty
 
 receive more study time.
@@ -61,43 +64,31 @@ receive more study time.
 Example:
 
 | Subject | Difficulty | Days Left | Priority |
-|----------|-----------|----------:|---------:|
+|---------|-----------:|----------:|---------:|
 | DBMS | Hard | 4 | High |
 | Java | Medium | 10 | Medium |
 | Python | Easy | 20 | Low |
 
-The application then distributes **120 minutes** of daily study time proportionally across all subjects.
+The application distributes a fixed **120-minute daily study budget** proportionally based on each subject's urgency score.
 
 ---
 
-# 🛠 Tech Stack
+## 🛠 Tech Stack
 
-## Frontend
-
-- HTML5
-- CSS3
-- Vanilla JavaScript
-
-## Backend
-
-- Python
-- Flask
-- Flask-SQLAlchemy
-
-## Database
-
-- SQLite
-
-## Deployment
-
-- Gunicorn
-- Render
+| Layer | Technology |
+|--------|------------|
+| Frontend | HTML5, CSS3, JavaScript |
+| Backend | Python, Flask |
+| ORM | Flask-SQLAlchemy |
+| Database | SQLite |
+| Server | Gunicorn |
+| Hosting | Render |
 
 ---
 
-# 📂 Project Structure
+## 📂 Project Structure
 
-```
+```text
 Adaptive-Learning-Schedule-Planner
 │
 ├── app
@@ -126,7 +117,7 @@ Adaptive-Learning-Schedule-Planner
 
 ---
 
-# 🚀 Installation
+## 🚀 Installation
 
 Clone the repository
 
@@ -138,26 +129,6 @@ Move into the project
 
 ```bash
 cd Adaptive-Learning-Schedule-Planner
-```
-
-Create a virtual environment
-
-```bash
-python -m venv venv
-```
-
-Activate it
-
-### Windows
-
-```bash
-venv\Scripts\activate
-```
-
-### Linux / macOS
-
-```bash
-source venv/bin/activate
 ```
 
 Install dependencies
@@ -172,25 +143,25 @@ Run the application
 python run.py
 ```
 
-Open your browser
+Open
 
-```
+```text
 http://127.0.0.1:5000
 ```
 
 ---
 
-# 💻 Usage
+## 💻 Usage
 
-1. Enter a subject name.
-2. Select the exam date.
+1. Add a subject.
+2. Select its exam date.
 3. Choose the difficulty.
 4. Click **Add Subject**.
 5. View the automatically generated study schedule.
 
 ---
 
-# 🌐 API Endpoints
+## 🌐 API Endpoints
 
 | Method | Endpoint | Description |
 |---------|----------|-------------|
@@ -201,65 +172,52 @@ http://127.0.0.1:5000
 
 ---
 
-# 📸 Screenshots
+## 📸 Screenshots
 
-## Home Page
-
-_Add a screenshot here._
+> Add screenshots of your application here after deployment.
 
 ---
 
-## Generated Study Schedule
-
-_Add another screenshot here._
-
----
-
-# 🚀 Future Improvements
+## 🔮 Future Improvements
 
 - User authentication
 - Dark mode
-- Weekly planner
 - Calendar integration
 - Email reminders
-- AI-powered schedule optimization
-- Subject analytics dashboard
-- Mobile responsiveness improvements
+- Progress analytics
 - Export schedule to PDF
-- Cloud database support
+- PostgreSQL support
+- Mobile app
 
 ---
 
-# 📚 Learning Outcomes
+## 📚 Learning Outcomes
 
-This project helped me learn:
+This project helped me gain practical experience with:
 
-- Flask application architecture
-- REST API development
+- Flask
 - SQLAlchemy ORM
-- CRUD operations
-- SQLite database integration
+- REST APIs
+- SQLite
 - JavaScript Fetch API
-- Responsive web design
-- Git & GitHub workflow
-- Render deployment with Gunicorn
+- CRUD Operations
+- Git & GitHub
+- Render Deployment
 
 ---
 
-# 👨‍💻 Author
+## 👨‍💻 Author
 
 **B Simak Ahmed**
-
-Computer Science Engineering Student
 
 GitHub: https://github.com/SamRepository25
 
 ---
 
-# 📄 License
+## 📄 License
 
 This project is licensed under the MIT License.
 
 ---
 
-## ⭐ If you found this project useful, consider giving it a Star!
+⭐ If you found this project useful, consider giving it a Star!
