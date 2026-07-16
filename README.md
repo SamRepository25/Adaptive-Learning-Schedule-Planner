@@ -6,7 +6,7 @@ An intelligent web-based study planner that automatically generates a personaliz
 
 ## 📸 Preview
 
-![Adaptive Learning Schedule Planner](screenshots/preview.png)
+![Adaptive Learning Schedule Planner](screenshots/preview.jpeg)
 
 ---
 
