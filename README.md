@@ -1,34 +1,42 @@
 # 📚 Adaptive Learning Schedule Planner
 
-An intelligent study planner that helps students create a personalized daily learning schedule based on available study time, subject priorities, and progress. The application automatically generates an optimized schedule and allows users to track completed study sessions.
+An intelligent web-based study planner that automatically generates a personalized study schedule based on exam dates, subject difficulty, and available study time. It helps students prioritize important subjects, track daily progress, and stay organized throughout their exam preparation.
+
+---
+
+## 📸 Preview
+
+![Adaptive Learning Schedule Planner](screenshots/preview.png)
 
 ---
 
 ## ✨ Features
 
-* 📅 Generate an adaptive daily study schedule
-* ⏰ Allocate study time based on available hours
-* 📖 Manage multiple subjects
-* ✅ Mark study sessions as completed
-* 📊 Real-time progress tracking
-* 🎯 Priority-based scheduling
-* 💾 Persistent data storage using SQLite
-* 🌐 Clean and responsive web interface
+- 📅 Adaptive daily study schedule generation
+- ⏰ Smart time allocation based on exam urgency
+- 📚 Subject management (Add & Delete)
+- 📊 Dashboard with study statistics
+- ✅ Daily study session tracking
+- 📈 Real-time progress bar
+- 📝 Weekly study planner
+- 🎯 Difficulty-based scheduling
+- 📆 Upcoming exams overview
+- 💾 Persistent data storage using SQLite
 
 ---
 
 ## 🛠️ Tech Stack
 
-| Category        | Technology            |
-| --------------- | --------------------- |
-| Frontend        | HTML, CSS, JavaScript |
-| Backend         | Python, Flask         |
-| Database        | SQLite                |
-| Version Control | Git & GitHub          |
+| Category | Technology |
+|----------|------------|
+| Frontend | HTML, CSS, JavaScript |
+| Backend | Python, Flask |
+| Database | SQLite |
+| Version Control | Git & GitHub |
 
 ---
 
-## 📁 Project Structure
+## 📂 Project Structure
 
 ```text
 Adaptive-Learning-Schedule-Planner/
@@ -36,8 +44,9 @@ Adaptive-Learning-Schedule-Planner/
 ├── app/
 │   ├── routes.py
 │   ├── scheduler.py
+│   ├── database.py
 │   ├── models.py
-│   └── ...
+│   └── __init__.py
 │
 ├── templates/
 │
@@ -54,25 +63,23 @@ Adaptive-Learning-Schedule-Planner/
 └── LICENSE
 ```
 
-> *Update the structure above if your folders differ.*
-
 ---
 
 ## 🚀 Getting Started
 
-### 1. Clone the repository
+### Clone the repository
 
 ```bash
 git clone https://github.com/SamRepository25/Adaptive-Learning-Schedule-Planner.git
 ```
 
-### 2. Navigate to the project
+### Navigate to the project
 
 ```bash
 cd Adaptive-Learning-Schedule-Planner
 ```
 
-### 3. Create a virtual environment (recommended)
+### Create a virtual environment (Optional)
 
 **Windows**
 
@@ -88,19 +95,19 @@ python3 -m venv venv
 source venv/bin/activate
 ```
 
-### 4. Install dependencies
+### Install dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### 5. Run the application
+### Run the application
 
 ```bash
 python app.py
 ```
 
-### 6. Open in your browser
+### Open in your browser
 
 ```
 http://127.0.0.1:5000
@@ -108,44 +115,40 @@ http://127.0.0.1:5000
 
 ---
 
-## 📸 Screenshots
-
-Add screenshots here to showcase your application.
-
-### Home Page
-
-![Home](screenshots/home.png)
-
-### Schedule
-
-![Schedule](screenshots/schedule.png)
-
-### Progress Tracking
-
-![Progress](screenshots/progress.png)
-
----
-
 ## 🎯 How It Works
 
-1. Add the subjects you want to study.
-2. Enter your available study time.
-3. Generate an optimized daily schedule.
-4. Complete study sessions.
-5. Track your learning progress in real time.
+1. Add your subjects with exam dates and difficulty.
+2. Set your available daily study time.
+3. The planner automatically calculates study priorities.
+4. A personalized daily schedule is generated.
+5. Mark completed study sessions to track progress.
+6. View your weekly study plan and upcoming exams.
 
 ---
 
-## 📈 Future Improvements
+## 📊 Scheduling Logic
 
-* 🔐 User authentication
-* ☁️ Cloud database support
-* 📱 Mobile-friendly improvements
-* 🤖 AI-powered study recommendations
-* 📅 Google Calendar integration
-* 🔔 Email and notification reminders
-* 🌙 Dark mode
-* 📊 Analytics dashboard
+The planner calculates study priority using:
+
+- Exam date proximity
+- Subject difficulty
+- Available daily study time
+
+Subjects with higher urgency receive more study time, ensuring efficient exam preparation.
+
+---
+
+## 🚀 Future Improvements
+
+- 🔐 User Authentication
+- ☁️ Cloud Database Support
+- 📱 Fully Responsive Mobile UI
+- 🤖 AI-powered Study Recommendations
+- 📅 Google Calendar Integration
+- 🔔 Email & Push Notifications
+- 🌙 Dark Mode
+- 📈 Advanced Analytics Dashboard
+- 📥 Export Study Schedule as PDF
 
 ---
 
@@ -153,10 +156,10 @@ Add screenshots here to showcase your application.
 
 Contributions are welcome!
 
-1. Fork the repository.
+1. Fork this repository.
 2. Create a new feature branch.
 3. Commit your changes.
-4. Push to your fork.
+4. Push the branch.
 5. Open a Pull Request.
 
 ---
@@ -165,7 +168,7 @@ Contributions are welcome!
 
 This project is licensed under the **MIT License**.
 
-See the **LICENSE** file for more details.
+See the **LICENSE** file for more information.
 
 ---
 
@@ -173,10 +176,10 @@ See the **LICENSE** file for more details.
 
 **B. Simak Ahmed**
 
-* GitHub: https://github.com/SamRepository25
+- GitHub: https://github.com/SamRepository25
 
 ---
 
 ## ⭐ Support
 
-If you found this project helpful, consider giving it a ⭐ on GitHub. It helps others discover the project and supports future development.
+If you found this project useful, please consider giving it a **⭐ Star** on GitHub. Your support helps improve and grow the project.
